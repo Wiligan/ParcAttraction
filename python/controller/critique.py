@@ -2,13 +2,10 @@ import request.request as req
 
 def add_critique(data):
     print(data, flush=True)
-    if (not "nom" in data or data["nom"] == ""):
+    if (not "critique" in data or data["critique"] == ""):
         return False
 
-    if (not "prenom" in data or data["prenom"] == ""):
-            return False
-    
-    if (not "critique" in data or data["critique"] == ""):
+    if (not "note" in data or data["note"] == ""):
         return False
 
     if (not "attraction_id" in data or data["attraction_id"] is None):
@@ -18,12 +15,12 @@ def add_critique(data):
         data["visible"] = True
 
     if ("critique_id" in data and data["critique_id"]):
-      requete = f"UPDATE critique SET nom='{data['nom']}', prenom='{data['prenom']}', critique='{data['critique']}', attraction_id={data['attraction_id']} WHERE critique_id = {data['critique_id']}"
+      requete = f"UPDATE critique SET nom='{data['nom']}', prenom='{data['prenom']}', critique='{data['critique']}', note='{data['note']}', attraction_id={data['attraction_id']} WHERE critique_id = {data['critique_id']}"
       req.insert_in_db(requete)
       id = data['attraction_id']
     else:
-      requete = "INSERT INTO attraction (nom, prenom, critique, attraction_id) VALUES (?, ?, ?, ?);"
-      id = req.insert_in_db(requete, (data["nom"], data["prenom"], data["critique"], data["attraction_id"]))
+      requete = "INSERT INTO attraction (nom, prenom, critique, note, attraction_id) VALUES (?, ?, ?, ?, ?);"
+      id = req.insert_in_db(requete, (data["nom"], data["prenom"], data["critique"], data["note"], data["attraction_id"]))
 
     return id
 

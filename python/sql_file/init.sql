@@ -30,6 +30,7 @@ CREATE TABLE critique
     prenom        varchar(255) null,
     nom           varchar(255) null,
     critique      varchar(255) not null,
+    note INT,
     attraction_id INT,
     CONSTRAINT fk_id_attraction FOREIGN KEY (attraction_id) REFERENCES attraction (attraction_id)
 );
