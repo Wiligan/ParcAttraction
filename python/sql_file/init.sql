@@ -21,9 +21,9 @@ CREATE TABLE users
 );
 
 
-DROP TABLE IF EXISTS critiques;
+DROP TABLE IF EXISTS critique;
 
-CREATE TABLE critiques
+CREATE TABLE critique
 (
     critique_id   int auto_increment,
     primary key (critique_id),

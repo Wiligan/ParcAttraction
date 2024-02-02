@@ -1,0 +1,12 @@
+POST http://127.0.0.1:5000/critique HTTP/1.1
+Content-Type: application/json
+Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDYzOTQ3OTYsImlhdCI6MTcwNjMwODM5Niwic3ViIjoxfQ.aLTZKPZE0cYRW1lCTMg9lglDxdO0NHEAmD1RFkCL7Hk
+
+{
+  "critique_id": 1,
+  "prenom": "test6aaaaaaaaaaaaaaaaaaaaa",
+  "nom": "test6aaaaaaaaaaaaaaaaaaaaa",
+  "critique": "test",
+  "attraction_id": 1
+}
+
