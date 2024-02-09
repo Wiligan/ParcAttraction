@@ -10,10 +10,23 @@
         <span>Difficulté de l'attraction / 5</span>
       </div>
     </div>
-      <div *ngIf="attraction" class="attraction">
-        <span>{{attraction.nom}}</span>
-        <span>{{attraction.description}}</span>
-        <span>{{attraction.difficulte}} / 5</span>
+    <div *ngIf="attraction" class="attraction">
+      <span>{{ attraction.nom }}</span>
+      <span>{{ attraction.description }}</span>
+      <span>{{ attraction.difficulte }} / 5</span>
+    </div>
+
+    <div class="critique-title">
+      <div class="critique">
+        <span>Auteur</span>
+        <span>Commentaire</span>
+        <span>Note / 5</span>
       </div>
+    </div>
+    <div *ngFor="let critique of critiques" class="attraction">
+      <span>{{ critique.prenom }} {{ critique.nom }}</span>
+      <span>{{ critique.critique }}</span>
+      <span>{{ critique.note }} / 5</span>
+    </div>
   </mat-card-content>
 </mat-card>

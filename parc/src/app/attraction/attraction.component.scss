@@ -1,11 +1,11 @@
-.attraction-title {
+.attraction-title, .critique-title {
   font-size: 18px;
   font-weight: 500;
   background-color: darkgrey;
   width: fit-content;
   margin-top: 25px;
 }
-.attraction {
+.attraction, .critique {
   display: flex;
   align-items: center;
   column-gap: 25px;
