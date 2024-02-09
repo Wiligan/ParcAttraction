@@ -33,6 +33,11 @@ def getAllAttraction():
     result = attraction.get_all_visible_attraction()
     return result, 200
 
+@app.get('/attraction/critiques/<int:index>')
+def getCritiquesAttraction(index):
+    result = attraction.get_critiques(index)
+    return result, 200
+
 @app.get('/attraction/<int:index>')
 def getAttraction(index):
     result = attraction.get_attraction(index)
