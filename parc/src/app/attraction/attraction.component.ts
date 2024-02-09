@@ -18,6 +18,7 @@ export class AttractionComponent {
 
   public attraction: AttractionInterface | null = null
   public critiques: CritiqueInterface[] | null = null;
+  public hasCritics: boolean = false;
 
   constructor(private route: ActivatedRoute, public attractionService: AttractionService) {
     let attractionID: string | null;
@@ -29,6 +30,7 @@ export class AttractionComponent {
 
     this.attractionService.getAttractionCritiques(attractionID).subscribe(critiques => {
       this.critiques = critiques;
+      this.hasCritics = critiques.length > 0;
     })
   }
 }

@@ -16,17 +16,19 @@
       <span>{{ attraction.difficulte }} / 5</span>
     </div>
 
-    <div class="critique-title">
-      <div class="critique">
-        <span>Auteur</span>
-        <span>Commentaire</span>
-        <span>Note / 5</span>
+    <div *ngIf="hasCritics">
+      <div class="critique-title">
+        <div class="critique">
+          <span>Auteur</span>
+          <span>Commentaire</span>
+          <span>Note / 5</span>
+        </div>
       </div>
-    </div>
-    <div *ngFor="let critique of critiques" class="attraction">
-      <span>{{ critique.prenom }} {{ critique.nom }}</span>
-      <span>{{ critique.critique }}</span>
-      <span>{{ critique.note }} / 5</span>
+      <div *ngFor="let critique of critiques" class="attraction">
+        <span>{{ critique.prenom }} {{ critique.nom }}</span>
+        <span>{{ critique.critique }}</span>
+        <span>{{ critique.note }} / 5</span>
+      </div>
     </div>
   </mat-card-content>
 </mat-card>
