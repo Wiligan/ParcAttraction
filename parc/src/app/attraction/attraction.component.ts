@@ -4,7 +4,7 @@ import {AttractionInterface} from '../Interface/attraction.interface';
 import {AttractionService} from '../Service/attraction.service';
 import {CommonModule} from '@angular/common';
 import {MatCardModule} from '@angular/material/card';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {CritiqueInterface} from "../Interface/critique.interface";
 
 @Component({
@@ -31,5 +31,4 @@ export class AttractionComponent {
       this.critiques = critiques;
     })
   }
-
 }
