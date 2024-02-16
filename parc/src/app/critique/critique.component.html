@@ -1,0 +1,22 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Ajouter une critique</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="form" (ngSubmit)="addCritique()" class="formulaire">
+      <mat-form-field appearance="fill">
+        <mat-label>Nom</mat-label>
+        <input matInput formControlName="name">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Prénom</mat-label>
+        <input matInput formControlName="surname">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Critique</mat-label>
+        <input matInput formControlName="critique">
+      </mat-form-field>
+      <button mat-stroked-button type="submit">Envoyer</button>
+    </form>
+  </mat-card-content>
+</mat-card>
