@@ -16,6 +16,10 @@
       <span>{{ attraction.difficulte }} / 5</span>
     </div>
 
+    <div *ngIf="attraction" class="attraction">
+      <app-critique [attraction_id]="attraction.attraction_id"></app-critique>
+    </div>
+
     <div *ngIf="hasCritics">
       <div class="critique-title">
         <div class="critique">

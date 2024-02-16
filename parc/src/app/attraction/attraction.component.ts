@@ -6,11 +6,12 @@ import {CommonModule} from '@angular/common';
 import {MatCardModule} from '@angular/material/card';
 import {ActivatedRoute, Router} from '@angular/router';
 import {CritiqueInterface} from "../Interface/critique.interface";
+import {CritiqueComponent} from "../critique/critique.component";
 
 @Component({
   selector: 'app-attraction',
   standalone: true,
-  imports: [CommonModule, MatCardModule],
+  imports: [CommonModule, MatCardModule, CritiqueComponent],
   templateUrl: './attraction.component.html',
   styleUrl: './attraction.component.scss'
 })
