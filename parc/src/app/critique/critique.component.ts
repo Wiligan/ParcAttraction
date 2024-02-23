@@ -44,6 +44,7 @@ export class CritiqueComponent {
   public addCritique() {
     if (this.form.valid) {
       const formData = this.form.value;
+
     }
   }
 }

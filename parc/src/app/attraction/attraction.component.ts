@@ -1,5 +1,4 @@
 import {Component} from '@angular/core';
-import {Observable} from 'rxjs';
 import {AttractionInterface} from '../Interface/attraction.interface';
 import {AttractionService} from '../Service/attraction.service';
 import {CommonModule} from '@angular/common';
@@ -7,6 +6,7 @@ import {MatCardModule} from '@angular/material/card';
 import {ActivatedRoute, Router} from '@angular/router';
 import {CritiqueInterface} from "../Interface/critique.interface";
 import {CritiqueComponent} from "../critique/critique.component";
+import {CritiqueService} from "../Service/critique.service";
 
 @Component({
   selector: 'app-attraction',
@@ -21,7 +21,7 @@ export class AttractionComponent {
   public critiques: CritiqueInterface[] | null = null;
   public hasCritics: boolean = false;
 
-  constructor(private route: ActivatedRoute, public attractionService: AttractionService) {
+  constructor(private route: ActivatedRoute, public attractionService: AttractionService, public critiqueService: CritiqueService) {
     let attractionID: string | null;
     attractionID = this.route.snapshot.paramMap.get('id');
 
@@ -29,7 +29,7 @@ export class AttractionComponent {
       this.attraction = attraction;
     });
 
-    this.attractionService.getAttractionCritiques(attractionID).subscribe(critiques => {
+    this.critiqueService.getCritiquesAttraction(attractionID).subscribe(critiques => {
       this.critiques = critiques;
       this.hasCritics = critiques.length > 0;
     })
