@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class DataService {
-  
+
   constructor(private http: HttpClient) { }
 
   public getData(url: string) {
@@ -15,6 +15,7 @@ export class DataService {
 
   public postData(url: string, data: any) {
     let result = this.http.post(url, data);
+    console.log(result)
     return result;
   }
 

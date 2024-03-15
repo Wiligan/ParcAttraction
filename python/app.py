@@ -104,11 +104,6 @@ def getCritique(index):
 @app.delete('/critique/<int:index>')
 def deleteCritique(index):
 
-    # Fonction vérif token
-    checkToken = user.check_token(request)
-    if (checkToken != True):
-        return checkToken
-
     json = request.get_json()
 
     if (critique.delete_critique(index)):

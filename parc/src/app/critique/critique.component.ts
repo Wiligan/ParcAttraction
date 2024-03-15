@@ -7,6 +7,8 @@ import {FormBuilder, ReactiveFormsModule, Validators} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
 import {MatOption, MatSelect} from "@angular/material/select";
 import {NgForOf} from "@angular/common";
+import {CritiqueService} from "../Service/critique.service";
+import {transformToCritiqueInterface} from "../Interface/critique.interface";
 
 @Component({
   selector: 'app-critique',
@@ -41,10 +43,21 @@ export class CritiqueComponent {
     note: [0, [Validators.required, Validators.min(0), Validators.max(5)]],
   });
 
+  private critiqueService: CritiqueService;
+
+  public constructor(critiqueService: CritiqueService) {
+    this.critiqueService = critiqueService;
+  }
+
   public addCritique() {
     if (this.form.valid) {
-      const formData = this.form.value;
-
+      const formData = transformToCritiqueInterface(this.form.value);
+      console.log(this.form.value);
+      if (this.attraction_id != null) {
+        formData.attraction_id = this.attraction_id;
+      }
+      console.log(formData);
+      this.critiqueService.postCritiquesAttraction(formData).subscribe();
     }
   }
 }
